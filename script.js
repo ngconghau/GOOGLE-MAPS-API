@@ -8,11 +8,12 @@ function initMap() {
     });
 
     //add marker
+
     const markerUtc2 = new google.maps.Marker({
         position: utc2,
         map: map,
         icon: {
-            url: '/icon/logoutc2.png', scaledSize: { width: 35, height: 35 }
+            url: './icon/logoutc2.png', scaledSize: { width: 35, height: 35 }
         },
         animation: google.maps.Animation.BOUNCE
     });
@@ -21,7 +22,7 @@ function initMap() {
         position: myHome,
         map: map,
         icon: {
-            url: '/icon/avatar.png', scaledSize: { width: 35, height: 35 }
+            url: './icon/avatar.png', scaledSize: { width: 35, height: 35 }
         },
         animation: google.maps.Animation.BOUNCE
     });
@@ -31,6 +32,7 @@ function initMap() {
     //begin add infoWindow
 
     //end add infoWindow
+
     const strInfoUtc2 =
         '<div id = "content">' +
         '<div id="site-notice>' +
@@ -61,9 +63,11 @@ function initMap() {
         "</ div>"
     const infoMyInfoWindow = new google.maps.InfoWindow({ content: strMyInfo, });
     markerHome.addListener("click", () => { infoMyInfoWindow.open(map, markerHome) });
+
     //end add infoWindow
 
     //begin add direction Service
+
     var directionService = new google.maps.DirectionsService();
     directionService.route(
         {
@@ -81,5 +85,6 @@ function initMap() {
             }
         }
     );
+
     //end add direction Service
 }
